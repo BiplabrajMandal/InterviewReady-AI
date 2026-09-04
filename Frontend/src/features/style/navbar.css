@@ -1,0 +1,106 @@
+/* ===== Navbar ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(14, 12, 16, 0.75);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ===== Brand ===== */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.navbar-brand:hover {
+    opacity: 0.85;
+}
+
+.navbar-logo-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    filter: drop-shadow(0 0 8px var(--color-accent-glow));
+    transition: transform var(--transition-fast);
+}
+
+.navbar-brand:hover .navbar-logo-img {
+    transform: scale(1.08);
+}
+
+.navbar-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.navbar-name-ai {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Right Section ===== */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.navbar-greeting {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.navbar-greeting strong {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+.navbar-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.navbar-logout-btn:hover {
+    border-color: var(--color-error-border);
+    color: var(--color-error-text);
+    background: var(--color-error-bg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    .navbar-greeting {
+        display: none;
+    }
+}
